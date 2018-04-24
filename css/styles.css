@@ -1,0 +1,42 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	font-family: 'quicksandregular';
+}
+
+.encabezado {
+	height: 80px;
+	background-color:#1E0C4B;
+	text-align:center;
+	color: white;
+	font-size:60px;
+}
+#encabezado h1 {
+	font-size:50px;
+	margin: 0px;
+	line-height:80px;
+	font-weight: normal;
+	font-family: 'signature_of_the_ancient_Rg';
+}
+
+/*FUENTES*/
+@font-face {
+    font-family: 'signature_of_the_ancient_Rg';
+    src: url('fonts/signature_of_the_ancient-webfont.woff2') format('woff2'),
+         url('fonts/signature_of_the_ancient-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'quicksandregular';
+    src: url('../fonts/quicksand-regular-webfont.woff2') format('woff2'),
+         url('../fonts/quicksand-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
