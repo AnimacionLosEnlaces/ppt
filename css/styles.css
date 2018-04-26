@@ -20,6 +20,10 @@ body {
 	font-family: 'signature_of_the_ancient_Rg';
 }
 
+.interactivo {
+	cursor: pointer;
+}
+
 /*FUENTES*/
 @font-face {
     font-family: 'signature_of_the_ancient_Rg';
