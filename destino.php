@@ -7,15 +7,13 @@
 
 <body>
 <PRE>
+
 <?php 
-if(isset($_POST) && count($_POST) != 0)
-{
-	print_r($_POST);
-}
-else
-{
-	print_r($_GET);
-}
+
+echo $_GET['form_nombre'];
+
+
+
 ?>
  </PRE>
  <a href="formulario.php">Volver</a>

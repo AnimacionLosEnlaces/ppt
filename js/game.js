@@ -14,6 +14,8 @@ jugadas[2] = "Tijera";
 //Elementos del DOM
 var DOM_countdown = document.getElementById('countDown');
 var DOM_koala = document.getElementById('imgKoala');
+var DOM_medusa = document.getElementById('imgMedusa');
+var DOM_pinguino = document.getElementById('imgPinguino');
 
 
 
@@ -25,8 +27,7 @@ function init(){
 
 function cuentaAtras(){
 	console.log('se ejecuta la cuenta atras');
-	
-	
+
 	DOM_countdown.innerHTML = jugadas[inicial];
 
 	var counter = setInterval(function()  {
@@ -42,22 +43,27 @@ function cuentaAtras(){
 				activo = false;
 				avisoAlerta = 'Se ha pasado el tiempo';
 				console.log('Se ha pasado el tiempo');
-			}, 3000);
+			}, 10000);
 			clearInterval(counter);
 		}
-	},1000);
+	},200);
 
 }
 
-//Pausar
-setTimeout(function(){
-		console.log('Han pasado 3 segundos')
-	}, 3000);
 
 //Interactividad del koala
-DOM_koala.addEventListener('click',koala);
+DOM_koala.addEventListener('click',function() {
+		ejecutarIA(0);
+	});
+DOM_medusa.addEventListener('click',function() {
+		ejecutarIA(1);
+	});
+DOM_pinguino.addEventListener('click',function() {
+		ejecutarIA(2);
+	});
 
-function koala(){
+
+function ejecutarIA(userPlay){
 	
 	if(activo == false)
 	{
@@ -65,9 +71,18 @@ function koala(){
 	}
 	else 
 	{
-		console.log('KOALA');
+		var iaPlay = getRandomInt(0,2);	
+		console.log("La máquina ha elegido:" + jugadas[iaPlay]);
+		console.log("El usuario ha elegido:" + jugadas[userPlay]);
+
 	}
 }
-	
+
+//Funcion elige un nº al azar
+function getRandomInt(min, max) {
+	return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
 
 

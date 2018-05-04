@@ -18,7 +18,14 @@
     <h1>Cuenta atrás</h1>
     
     <p align="center" class="encabezado" id="countDown">3</p>
-    <p><img src="img/Koala.jpg" width="200" class="interactivo" id="imgKoala"></p>
+    <p><img src="img/Koala.jpg" width="200" class="interactivo" id="imgKoala">
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <img src="img/medusa.jpg" width="200" class="interactivo" id="imgMedusa">
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <img src="img/pinguino.jpg" width="200" class="interactivo" id="imgPinguino">
+    
+    
+    </p>
     
     </div>
     
