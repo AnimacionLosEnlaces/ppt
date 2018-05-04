@@ -13,7 +13,7 @@
 <title>Formulario</title>
 </head>
 
-<body>
+<body onLoad="init()">
 <div class="container">
     <h1>Formulario Bootstrap</h1>
     <p>Los datos se mandarán a la página "destino.php"</p>
@@ -24,10 +24,20 @@
     <br>
     <input type="text" id="input_nombre" name="form_nombre" class="form-control">
 </div>
+<!--Inicio alerta Nombre-->
+<div class="alert alert-warning" style="display:none" id="alertName">
+  <strong>Warning!</strong> No puedes dejar esta campo en blanco.
+</div>
+<!--Fin alerta nombre-->
 <div class="form-group">
 	<label for="input_pass">CONTRASEÑA:</label>
 	<input type="password" id="input_pass" name="form_pass" class="form-control">
 </div>
+<!--Inicio alerta Pass-->
+<div class="alert alert-warning" style="display:none" id="alertPass">
+  <strong>Warning!</strong> La contraseña no puede estar vacía
+</div>
+<!--Fin alerta Pass-->
 <div class="form-group">
     <label>RAZA</label>
     <br>
@@ -55,10 +65,11 @@ Entrada check
 </form>
 
 <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS 
+    <script src="js/jquery-3.2.1.slim.min.js"></script>-->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/form.js"></script>
 </body>
 </html>
