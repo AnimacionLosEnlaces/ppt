@@ -6,6 +6,10 @@ var DOM_inputName = document.getElementById('input_nombre');
 var DOM_alertName = document.getElementById('alertName');
 var DOM_inputPass = document.getElementById('input_pass');
 var DOM_alertPass = document.getElementById('alertPass');
+var DOM_inputPass2 = document.getElementById('input_pass2');
+var DOM_alertPass2 = document.getElementById('alertPass2');
+var DOM_check = document.getElementById('inputCheckbox');
+var DOM_alertCheck = document.getElementById('alertCheck');
 
 
 DOM_enviar.addEventListener('click',validarForm);
@@ -44,6 +48,30 @@ function validarForm(){
 		{
 			//DOM_alertName.style.display = "none";
 			$("#alertPass").slideUp();
+		}
+		
+		//Compruebo si la contraseña está repetida bien
+		var passValue2 = DOM_inputPass2.value;
+		if(passValue != passValue2)
+		{
+			correcto = false;
+			DOM_alertPass2.style.display = "block";
+		}
+		else
+		{
+			DOM_alertPass2.style.display = "none";
+		}
+		
+		//Compruebo si el checkbox esta marcado
+		var checked = DOM_check.checked;
+		if(checked == false)
+		{
+			correcto = false;
+			DOM_alertCheck.style.display = "block";
+		}
+		else
+		{
+			DOM_alertCheck.style.display = "none";
 		}
 		
 		//Si está todo bien, mando el form

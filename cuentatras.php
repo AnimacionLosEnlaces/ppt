@@ -17,7 +17,7 @@
   	<div class="container">
     <h1>Cuenta atrás</h1>
     
-    <p align="center" class="encabezado" id="countDown">3</p>
+    <p align="center" class="encabezado" id="countDown"></p>
     <p><img src="img/Koala.jpg" width="200" class="interactivo" id="imgKoala">
     &nbsp;&nbsp;&nbsp;&nbsp;
     <img src="img/medusa.jpg" width="200" class="interactivo" id="imgMedusa">
@@ -26,7 +26,8 @@
     
     
     </p>
-    
+    <p>Ususario: <span id="usrCount"></span></p>
+    <p>Máquina: <span id="iaCount"></span></p>
     </div>
     
 

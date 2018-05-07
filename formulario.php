@@ -26,18 +26,35 @@
 </div>
 <!--Inicio alerta Nombre-->
 <div class="alert alert-warning" style="display:none" id="alertName">
-  <strong>Warning!</strong> No puedes dejar esta campo en blanco.
+  <strong>¡Alerta!</strong> No puedes dejar esta campo en blanco.
 </div>
 <!--Fin alerta nombre-->
+
+<!--Input PASS-->
 <div class="form-group">
 	<label for="input_pass">CONTRASEÑA:</label>
 	<input type="password" id="input_pass" name="form_pass" class="form-control">
 </div>
+<!--Fin Input PASS-->
 <!--Inicio alerta Pass-->
 <div class="alert alert-warning" style="display:none" id="alertPass">
   <strong>Warning!</strong> La contraseña no puede estar vacía
 </div>
 <!--Fin alerta Pass-->
+
+<!--Input PASS REP-->
+<div class="form-group">
+	<label for="input_pass2">Repite la contraseña:</label>
+	<input type="password" id="input_pass2" name="form_pass2" class="form-control">
+</div>
+<!--Fin Input PASS   REP-- 
+<!--Inicio alerta Pass rep-->
+<div class="alert alert-warning" style="display:none" id="alertPass2">
+  <strong>Warning!</strong> Las contraseñas no son iguales
+</div>
+<!--Fin alerta Pass rep-->
+
+
 <div class="form-group">
     <label>RAZA</label>
     <br>
@@ -49,9 +66,14 @@
         <input type="radio" name="form_raza" value="orc">
 </div>
 <div class="form-group">
-Entrada check
-<input type="checkbox">
+Acepto las <a href="#" data-toggle="modal" data-target="#myModal">condiciones</a> del sitio web
+<input type="checkbox" id="inputCheckbox">
 </div>
+<!--Inicio alerta Check-->
+<div class="alert alert-warning" style="display:none" id="alertCheck">
+  <strong>Warning!</strong> Debes aceptar las normas
+</div>
+<!--Fin alerta check-->
 <div class="form-group">
 	<label for="input_select">Selecciona país</label>
 	<br>
@@ -63,6 +85,34 @@ Entrada check
 <span class="btn btn-warning" id="btn_enviar" >Enviar</span>
 
 </form>
+
+
+
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Condiciones de la web</h4>
+      </div>
+      <div class="modal-body">
+        <p>Acepto vender mi alma al webmaster</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!--Fin modal-->
+
+
 
 <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS 

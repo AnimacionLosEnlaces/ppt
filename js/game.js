@@ -1,7 +1,10 @@
 // JavaScript Document
-var activo = false;
+var activo = true;
 var inicial = 0;
 var avisoAlerta = "Todavía no";
+
+var usrCount;
+var iaCount;
 
 //Array con las jugadas
 var jugadas = [];
@@ -21,13 +24,18 @@ var DOM_pinguino = document.getElementById('imgPinguino');
 
 function init(){
 	//console.log('FUNCIONA!');
-	cuentaAtras();
-	
+	//Pongo los contadores
+	usrCount = 0;
+	iaCount = 0;
+	document.getElementById('usrCount').innerHTML = usrCount;
+	document.getElementById('iaCount').innerHTML = iaCount;
+
 }
 
-function cuentaAtras(){
+function cuentaAtras(userPlay){
+	inicial = 0;
 	console.log('se ejecuta la cuenta atras');
-
+	activo = false;
 	DOM_countdown.innerHTML = jugadas[inicial];
 
 	var counter = setInterval(function()  {
@@ -38,16 +46,75 @@ function cuentaAtras(){
 		}
 		else{
 			DOM_countdown.innerHTML = "¡YA!";
-			activo = true;
-			setTimeout(function(){
-				activo = false;
-				avisoAlerta = 'Se ha pasado el tiempo';
-				console.log('Se ha pasado el tiempo');
-			}, 10000);
+			//Paramos la cuenta atrás
 			clearInterval(counter);
+			//La máquina elige jugada
+			var iaPlay = getRandomInt(0,2);	
+			console.log("La máquina ha elegido:" + jugadas[iaPlay]);
+			console.log("El usuario ha elegido:" + jugadas[userPlay]);
+			activo = true;
+			
+			if(userPlay != iaPlay)
+			{
+				
+				resultado = userWins(jugadas[userPlay],jugadas[iaPlay]);
+				if(resultado == true)
+				{
+					usrCount++;
+					document.getElementById('usrCount').innerHTML = usrCount;
+				}
+				else
+				{
+					iaCount++;
+					document.getElementById('iaCount').innerHTML = iaCount;
+				}
+					
+			
+			}
+			else
+			{
+				//Han empatado
+				
+			}
+				
 		}
-	},200);
+	},600);
+	
 
+}
+
+///Funcion para comprobar quién gana
+function userWins(usrMov, iaMov)
+{
+	
+	usrMov = usrMov.toLowerCase();
+	iaMov = iaMov.toLowerCase();
+	
+	superArray = new Array();
+	superArray['piedra'] = new Array();
+	superArray['piedra']['img'] = 'piedra.png';
+	superArray['piedra']['gana'] = new Array();
+	superArray['piedra']['gana'] = ['lagarto','tijera'];
+	superArray['papel'] = new Array();
+	superArray['papel']['img'] = 'papel.png';
+	superArray['papel']['gana'] = ['piedra','spock'];
+	superArray['tijera'] = new Array();
+	superArray['tijera']['img'] = 'tijera.png';
+	superArray['tijera']['gana'] = ['papel','lagarto'];
+	superArray['lagarto'] = new Array();
+	superArray['lagarto']['img'] = 'lagarto.png';
+	superArray['lagarto']['gana'] = ['spock','papel'];
+	superArray['spock'] = new Array();
+	superArray['spock']['img'] = 'spock.png';
+	superArray['spock']['gana'] = ['tijera','piedra'];
+
+	if (superArray[usrMov]['gana'].indexOf(iaMov) === -1) {
+    	return false;
+	}
+	else {
+		return true;
+	}	
+		
 }
 
 
@@ -71,10 +138,12 @@ function ejecutarIA(userPlay){
 	}
 	else 
 	{
+		cuentaAtras(userPlay);
+		/*
 		var iaPlay = getRandomInt(0,2);	
 		console.log("La máquina ha elegido:" + jugadas[iaPlay]);
 		console.log("El usuario ha elegido:" + jugadas[userPlay]);
-
+*/
 	}
 }
 
