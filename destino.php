@@ -10,7 +10,7 @@
 
 <?php 
 
-echo $_GET['form_nombre'];
+print_r($_GET);
 
 
 

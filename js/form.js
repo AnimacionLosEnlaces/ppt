@@ -77,7 +77,7 @@ function validarForm(){
 		//Si está todo bien, mando el form
 		if(correcto == true)
 		{
-			//DOM_form.submit();
+			DOM_form.submit();
 			console.log('Se ha enviado');
 		}
 		else
