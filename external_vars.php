@@ -39,7 +39,7 @@ if(isset($_POST['nombre']))
 <?php else : ?>
 <!--Existe la variable de sesión así que saludo-->
 <p>Hola <?php echo $_SESSION['session_name'] . " " .  $_SESSION['session_lastname'] ?>.</p>
-<p>Llevas logeado <?php echo time() - $_SESSION['session_time']?> segundos.</p>
+<p>Llevas logeado <strong><span id="span_logged">-</span></strong> segundos.</p>
 <p>Pincha <a href="logout.php">aquí</a> para logout.</p> 
 
 
@@ -47,12 +47,18 @@ if(isset($_POST['nombre']))
 
 <h1>
 
-<?php
+<script>
+//Declaro las variables que me pasa PHP
+var nombre = '<?php echo $_SESSION['session_name']; ?>';
+var loggedTime = '<?php echo $_SESSION['session_time']; ?>';
+
+</script>
+
+<script src="js/vars.js"></script>
 
 
 
 
-?>
 
 </h1>
 
