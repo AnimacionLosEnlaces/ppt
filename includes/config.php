@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "miweb";
+$dbname = "miweb";
 
 $webtitle = "Hola mundo";
 
