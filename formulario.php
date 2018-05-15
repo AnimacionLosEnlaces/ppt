@@ -82,6 +82,11 @@ Acepto las <a href="#" data-toggle="modal" data-target="#myModal">condiciones</a
         <option value="fr">Francia</option>
     </select>
 </div>
+<?php if(isset($_SESSION['id_usuario'])) : ?>
+<input type="hidden" name="id_usuario" value="<?php echo $_SESSION['id_usuario'] ?>">
+<?php else : ?>
+<input type="hidden" name="id_usuario" value="nop">
+<?php endif ?>
 <span class="btn btn-warning" id="btn_enviar" >Enviar</span>
 
 </form>

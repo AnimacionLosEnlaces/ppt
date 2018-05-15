@@ -5,7 +5,7 @@ $username = "root";
 $password = "";
 $dbname = "miweb";
 
-$webtitle = "Hola mundo";
+$webtitle = "Mi página web";
 
 
 ?>
