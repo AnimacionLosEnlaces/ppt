@@ -75,6 +75,7 @@ function cuentaAtras(userPlay){
 			{
 				//Han empatado
 				
+				
 			}
 				
 		}
